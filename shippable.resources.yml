@@ -1,0 +1,17 @@
+resources:
+###################### NATIVE WAR CI/CD RESOURCES #########################
+# S3 WAR reference
+  - name: demo_s3_file
+    type: file
+    integration: "troggy-aws"
+    pointer:
+      sourceName: "shipdemo-java-s3-ec2/builds"
+    seed:
+      versionName: master.1/HelloWorld.war
+
+# aws CLI config
+  - name: demo_s3_awscli
+    type: cliConfig
+    integration: troggy-aws
+    pointer:
+      region: eu-west-1
